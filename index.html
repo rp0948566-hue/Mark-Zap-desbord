@@ -209,6 +209,291 @@
         </main>
     </div>
 
+    <!-- ── MARK ZAP DASHBOARD VIEW ── -->
+    <div id="markzap-view" class="view markzap-view">
+        <header class="dashboard-header">
+            <div class="dash-header-left">
+                <h2 class="dash-welcome">Good morning, Rudra!</h2>
+            </div>
+            <div class="dash-header-right">
+                <button class="dash-icon-btn" title="Calendar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </button>
+                <button class="dash-icon-btn" title="Chat">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </button>
+                <button class="dash-icon-btn" title="Notifications">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </button>
+                <div class="dash-user-profile">
+                    <div class="dash-avatar-circle">RP</div>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-content">
+            <!-- Top Navigation and Arrow Keys -->
+            <div class="dash-row-header">
+                <div></div> <!-- spacing -->
+                <div class="dash-arrows">
+                    <button class="dash-arrow-btn" title="Previous"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+                    <button class="dash-arrow-btn" title="Next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+                </div>
+            </div>
+
+            <!-- Top Cards Grid -->
+            <div class="dash-grid-top">
+                <!-- Bank Balance -->
+                <div class="dash-card card-top">
+                    <div class="card-top-header">
+                        <div class="card-icon-circle accent-bg-1">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="M12 4v16"/><path d="M2 10h20"/></svg>
+                        </div>
+                        <button class="card-more-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                        </button>
+                    </div>
+                    <div class="card-value">$143,624</div>
+                    <div class="card-label">Your bank balance</div>
+                </div>
+
+                <!-- Uncategorized transactions -->
+                <div class="dash-card card-top">
+                    <div class="card-top-header">
+                        <div class="card-icon-circle accent-bg-2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                        </div>
+                        <button class="card-more-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                        </button>
+                    </div>
+                    <div class="card-value">12</div>
+                    <div class="card-label">Uncategorized transactions</div>
+                </div>
+
+                <!-- Employees working today -->
+                <div class="dash-card card-top">
+                    <div class="card-top-header">
+                        <div class="card-icon-circle accent-bg-3">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="15" r="2"/></svg>
+                        </div>
+                        <button class="card-more-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                        </button>
+                    </div>
+                    <div class="card-value">7</div>
+                    <div class="card-label">Employees working today</div>
+                </div>
+
+                <!-- This week's card spending -->
+                <div class="dash-card card-top">
+                    <div class="card-top-header">
+                        <div class="card-icon-circle accent-bg-4">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <button class="card-more-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                        </button>
+                    </div>
+                    <div class="card-value">$3,287.49</div>
+                    <div class="card-label">This week's card spending</div>
+                </div>
+            </div>
+
+            <!-- Two Columns Main Layout -->
+            <div class="dash-two-columns">
+                <!-- LEFT COLUMN -->
+                <div class="dash-col-left">
+                    <!-- Overdues & Clients Grid -->
+                    <div class="overdue-clients-grid">
+                        <!-- New clients -->
+                        <div class="dash-card mini-stats-card">
+                            <div class="mini-card-title">New clients</div>
+                            <div class="mini-card-value-wrap">
+                                <div class="mini-card-val">54</div>
+                                <div class="mini-card-badge positive">+ 18.7%</div>
+                            </div>
+                        </div>
+                        <!-- Invoices overdue -->
+                        <div class="dash-card mini-stats-card">
+                            <div class="mini-card-title">Invoices overdue</div>
+                            <div class="mini-card-value-wrap">
+                                <div class="mini-card-val">6</div>
+                                <div class="mini-card-badge negative">+ 2.7%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart Card -->
+                    <div class="dash-card chart-card">
+                        <div class="chart-card-header">
+                            <div>
+                                <h3 class="chart-title">Revenue</h3>
+                                <div class="chart-subtitle">Last 7 days VS prior week</div>
+                            </div>
+                        </div>
+                        <!-- Simulated SVG Line Chart with Tooltips -->
+                        <div class="chart-body-wrap">
+                            <div class="chart-svg-container">
+                                <!-- Grid Lines -->
+                                <div class="chart-grid-line" style="top: 0%"><span>20K</span></div>
+                                <div class="chart-grid-line" style="top: 33%"><span>15K</span></div>
+                                <div class="chart-grid-line" style="top: 66%"><span>10K</span></div>
+                                <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
+                                
+                                <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
+                                    <!-- Prior Week Path (Light Blue) -->
+                                    <path d="M 0 140 Q 100 130 200 90 T 400 60 T 600 80" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                    <!-- Current Week Path (Black) -->
+                                    <path d="M 0 100 Q 100 120 200 110 T 400 50 T 600 85" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                    <!-- Interactive Markers -->
+                                    <circle cx="200" cy="110" r="5" fill="#fff" stroke="#0f172a" stroke-width="3"/>
+                                    <circle cx="200" cy="90" r="5" fill="#fff" stroke="#93c5fd" stroke-width="3"/>
+                                </svg>
+
+                                <!-- High-fidelity Tooltips -->
+                                <div class="chart-tooltip active" style="left: 170px; top: 15px;">
+                                    <span class="tooltip-dot blue-dot"></span> Feb 15: $16,259.78
+                                </div>
+                                <div class="chart-tooltip active" style="left: 170px; top: 62px;">
+                                    <span class="tooltip-dot black-dot"></span> Feb 8: $12,790.34
+                                </div>
+                            </div>
+                            <!-- X Axis Labels -->
+                            <div class="chart-x-axis">
+                                <span>Feb 14</span>
+                                <span>Feb 15</span>
+                                <span>Feb 16</span>
+                                <span>Feb 17</span>
+                                <span>Feb 18</span>
+                                <span>Feb 19</span>
+                                <span>Feb 20</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Emails Card -->
+                    <div class="dash-card email-card">
+                        <h3 class="card-section-title">Recent emails</h3>
+                        <div class="email-list">
+                            <!-- Hannah Morgan -->
+                            <div class="email-row-item">
+                                <div class="email-avatar-circle hm-gradient">HM</div>
+                                <div class="email-details">
+                                    <div class="email-sender">Hannah Morgan</div>
+                                    <div class="email-subject">Meeting scheduled</div>
+                                </div>
+                                <div class="email-time">1:24 PM</div>
+                            </div>
+                            <!-- Megan Clark -->
+                            <div class="email-row-item">
+                                <div class="email-avatar-circle mc-gradient">MC</div>
+                                <div class="email-details">
+                                    <div class="email-sender">Megan Clark</div>
+                                    <div class="email-subject">Update on marketing campaign</div>
+                                </div>
+                                <div class="email-time">12:32 PM</div>
+                            </div>
+                            <!-- Brandon Williams -->
+                            <div class="email-row-item">
+                                <div class="email-avatar-circle bw-gradient">BW</div>
+                                <div class="email-details">
+                                    <div class="email-sender">Brandon Williams</div>
+                                    <div class="email-subject">Design 2.0 is about to launch</div>
+                                </div>
+                                <div class="email-time">Yesterday at 8:57 PM</div>
+                            </div>
+                            <!-- Reid Smith -->
+                            <div class="email-row-item">
+                                <div class="email-avatar-circle rs-gradient">RS</div>
+                                <div class="email-details">
+                                    <div class="email-sender">Reid Smith</div>
+                                    <div class="email-subject">My friend Julie loves Dappr!</div>
+                                </div>
+                                <div class="email-time">Yesterday at 8:49 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="dash-col-right">
+                    <!-- Formation status -->
+                    <div class="dash-card dark-card formation-card">
+                        <div class="dark-card-title-wrap">
+                            <h3 class="dark-card-title">Formation status</h3>
+                            <span class="dark-card-status">In progress</span>
+                        </div>
+                        <!-- Custom high-fidelity progress bar -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 60%"></div>
+                        </div>
+                        <div class="progress-estimate">Estimated processing <strong>4-5 business days</strong></div>
+                        <button class="dark-card-action-btn">View status</button>
+                    </div>
+
+                    <!-- Your to-Do list -->
+                    <div class="dash-card todo-card">
+                        <h3 class="card-section-title">Your to-Do list</h3>
+                        <div class="todo-list">
+                            <!-- Item 1 -->
+                            <div class="todo-item-row">
+                                <div class="todo-icon-circle black-circle-bg">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                </div>
+                                <div class="todo-item-details">
+                                    <div class="todo-item-name">Run payroll</div>
+                                    <div class="todo-item-due">Mar 4 at 6:00 pm</div>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="todo-item-row">
+                                <div class="todo-icon-circle black-circle-bg">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div class="todo-item-details">
+                                    <div class="todo-item-name">Review time off request</div>
+                                    <div class="todo-item-due">Mar 7 at 6:00 pm</div>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="todo-item-row">
+                                <div class="todo-icon-circle black-circle-bg">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                </div>
+                                <div class="todo-item-details">
+                                    <div class="todo-item-name">Sign board resolution</div>
+                                    <div class="todo-item-due">Mar 12 at 6:00 pm</div>
+                                </div>
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="todo-item-row">
+                                <div class="todo-icon-circle black-circle-bg">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <div class="todo-item-details">
+                                    <div class="todo-item-name">Finish onboarding Tony</div>
+                                    <div class="todo-item-due">Mar 12 at 6:00 pm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Board meeting -->
+                    <div class="dash-card dark-card meeting-card">
+                        <div class="meeting-dot-header">
+                            <span class="green-indicator-dot"></span>
+                            <span class="meeting-date-text">Feb 22 at 6:00 PM</span>
+                        </div>
+                        <h3 class="dark-card-title meeting-title">Board meeting</h3>
+                        <div class="meeting-description">You have been invited to attend a meeting of the Board Directors.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <!-- ── CHAT VIEW ── -->
     <div id="chat-view" class="view">
         <header class="chat-header">

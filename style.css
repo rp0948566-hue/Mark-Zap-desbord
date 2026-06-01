@@ -2318,3 +2318,664 @@ body:has(.sidebar:not(.collapsed)) .global-main-toggle {
     display: none !important;
 }
 
+/* ── MARK ZAP HIGH-FIDELITY BUSINESS DASHBOARD ── */
+.markzap-view {
+    background: #eef2f7 !important; /* Premium light blueish-grey backdrop */
+    height: 100vh !important;
+    overflow-y: auto !important;
+    display: none;
+    flex-direction: column;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+}
+
+.markzap-view.active {
+    display: flex !important;
+}
+
+.dashboard-header {
+    height: 70px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    flex-shrink: 0;
+}
+
+.dash-welcome {
+    font-family: 'Sora', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.dash-header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dash-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dash-icon-btn:hover {
+    color: #0f172a;
+    background: #f1f5f9;
+}
+
+.dash-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dash-user-profile:hover {
+    background: #f1f5f9;
+}
+
+.dash-avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(59,130,246,0.3);
+}
+
+.dash-user-profile svg {
+    color: #64748b;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 16px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dash-row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -10px;
+}
+
+.dash-arrows {
+    display: flex;
+    gap: 6px;
+}
+
+.dash-arrow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.dash-arrow-btn:hover {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.15);
+}
+
+.dash-grid-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dash-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dash-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.card-top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-icon-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accent-bg-1 { background: #dbeafe; color: #1e40af; }
+.accent-bg-2 { background: #fee2e2; color: #991b1b; }
+.accent-bg-3 { background: #d1fae5; color: #065f46; }
+.accent-bg-4 { background: #fef3c7; color: #92400e; }
+
+.card-more-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.card-more-btn:hover {
+    color: #0f172a;
+}
+
+.card-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.card-label {
+    font-size: 13.5px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.dash-two-columns {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.dash-col-left, .dash-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overdue-clients-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mini-stats-card {
+    padding: 20px;
+    gap: 8px;
+}
+
+.mini-card-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.mini-card-value-wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.mini-card-val {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.mini-card-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 100px;
+}
+
+.mini-card-badge.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.mini-card-badge.negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Revenue Chart Card */
+.chart-card {
+    padding: 24px;
+}
+
+.chart-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.chart-subtitle {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 3px;
+}
+
+.chart-body-wrap {
+    margin-top: 24px;
+    padding-left: 24px; /* offset for Y axis */
+}
+
+.chart-svg-container {
+    height: 180px;
+    position: relative;
+    width: 100%;
+}
+
+.chart-grid-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(15, 23, 42, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.chart-grid-line span {
+    position: absolute;
+    left: -32px;
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-tooltip {
+    position: absolute;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+}
+
+.tooltip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.blue-dot { background: #3b82f6; }
+.black-dot { background: #ffffff; }
+
+.chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    margin-top: 10px;
+}
+
+.chart-x-axis span {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Recent Emails Card */
+.email-card {
+    padding: 24px;
+}
+
+.card-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+}
+
+.email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.email-row-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.email-row-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.email-avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hm-gradient { background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%); }
+.mc-gradient { background: linear-gradient(135deg, #10b981 0%, #047857 100%); }
+.bw-gradient { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+.rs-gradient { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); }
+
+.email-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.email-sender {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-subject {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-time {
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+/* Dark Cards & Right Column Items */
+.dark-card {
+    background: #0f172a !important; /* solid deep black/metallic */
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.04) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+}
+
+.dark-card-title-wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.dark-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.dark-card-status {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 9px;
+    border-radius: 100px;
+    letter-spacing: 0.2px;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 100px;
+}
+
+.progress-estimate {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 12px;
+    text-align: center;
+}
+
+.dark-card-action-btn {
+    width: 100%;
+    height: 38px;
+    border-radius: 100px;
+    background: #e2e8f0;
+    border: none;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dark-card-action-btn:hover {
+    background: #ffffff;
+}
+
+/* To-Do List */
+.todo-card {
+    padding: 24px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.todo-item-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-icon-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.black-circle-bg {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.todo-item-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.todo-item-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.todo-item-due {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+/* Board Meeting */
+.meeting-card {
+    padding: 20px;
+}
+
+.meeting-dot-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.green-indicator-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.meeting-date-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.meeting-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 15.5px;
+}
+
+.meeting-description {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+}
+
+/* ── MOBILE RESPONSIVE OVERRIDES FOR DASHBOARD ── */
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 0 16px !important;
+        height: 60px !important;
+    }
+    
+    .dash-welcome {
+        font-size: 17px !important;
+    }
+    
+    .dashboard-content {
+        padding: 12px 16px 30px !important;
+        gap: 14px !important;
+    }
+    
+    .dash-grid-top {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .dash-card {
+        padding: 16px !important;
+    }
+    
+    .card-value {
+        font-size: 20px !important;
+    }
+    
+    .card-label {
+        font-size: 12.5px !important;
+    }
+    
+    .dash-two-columns {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    
+    .overdue-clients-grid {
+        gap: 12px !important;
+    }
+    
+    .mini-stats-card {
+        padding: 14px !important;
+    }
+    
+    .mini-card-val {
+        font-size: 26px !important;
+    }
+    
+    .chart-body-wrap {
+        padding-left: 18px !important;
+    }
+    
+    .chart-svg-container {
+        height: 140px !important;
+    }
+    
+    .chart-tooltip {
+        padding: 4px 8px !important;
+        font-size: 10.5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-grid-top {
+        grid-template-columns: 1fr !important;
+    }
+}
+

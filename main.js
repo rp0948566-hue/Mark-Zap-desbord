@@ -440,9 +440,13 @@ function copyToClipboard(text, btn) {
     });
 }
 
+const markZapView = getEl('markzap-view');
+const navCode = getEl('nav-code');
+
 function switchToHome() {
     activeView = 'home';
     chatView?.classList.remove('active');
+    markZapView?.classList.remove('active');
     homeView?.classList.add('active');
     if (homeTA) setTimeout(() => homeTA.focus(), 50);
 }
@@ -450,16 +454,22 @@ function switchToHome() {
 function switchToChat() {
     activeView = 'chat';
     homeView?.classList.remove('active');
+    markZapView?.classList.remove('active');
     chatView?.classList.add('active');
     scrollBottom();
-    // Focus the chat textarea and trigger input event to update button state
     if (chatTA) {
         setTimeout(() => {
             chatTA.focus();
-            // Trigger input event to ensure button state is correct
             chatTA.dispatchEvent(new Event('input', { bubbles: true }));
         }, 50);
     }
+}
+
+function switchToMarkZap() {
+    activeView = 'markzap';
+    homeView?.classList.remove('active');
+    chatView?.classList.remove('active');
+    markZapView?.classList.add('active');
 }
 
 // ─── Interaction Logic ──────────────────────────────────────────────────────
@@ -484,6 +494,18 @@ const closeSidebar = () => { sidebar?.classList.add('collapsed'); mainLayout?.cl
 overlay?.addEventListener('click', closeSidebar);
 
 getEl('sidebar-new-chat-btn-home')?.addEventListener('click', startNewChat);
+
+navCode?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.querySelectorAll('.rail-item').forEach(item => item.classList.remove('active'));
+    navCode?.classList.add('active');
+    historyPanel?.classList.remove('active');
+    mainLayout?.classList.remove('history-open');
+    switchToMarkZap();
+    if (window.innerWidth <= 768) {
+        closeSidebar();
+    }
+});
 
 ['upgrade-btn-sidebar', 'home-upgrade-btn'].forEach(id => {
     getEl(id)?.addEventListener('click', (e) => {
