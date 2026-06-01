@@ -480,8 +480,35 @@ function setActiveModel(key) {
 const toggleSidebar = () => { sidebar?.classList.toggle('collapsed'); mainLayout?.classList.toggle('sidebar-collapsed'); };
 const closeSidebar = () => { sidebar?.classList.add('collapsed'); mainLayout?.classList.add('sidebar-collapsed'); };
 
-['global-main-toggle'].forEach(id => getEl(id)?.addEventListener('click', toggleSidebar));
+['global-main-toggle', 'sidebar-toggle-inner-btn'].forEach(id => getEl(id)?.addEventListener('click', toggleSidebar));
 overlay?.addEventListener('click', closeSidebar);
+
+getEl('sidebar-new-chat-btn-home')?.addEventListener('click', startNewChat);
+
+['upgrade-btn-sidebar', 'home-upgrade-btn'].forEach(id => {
+    getEl(id)?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        settingsModal?.classList.add('active');
+        userPopup?.classList.remove('active');
+    });
+});
+
+getEl('open-history-panel-btn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    historyPanel?.classList.toggle('active');
+    mainLayout?.classList.toggle('history-open');
+    if (historyPanel?.classList.contains('active')) {
+        requestAnimationFrame(() => {
+            renderHistory();
+        });
+    }
+});
+
+getEl('panel-back-btn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    historyPanel?.classList.remove('active');
+    mainLayout?.classList.remove('history-open');
+});
 
 userRow?.addEventListener('click', (e) => { e.stopPropagation(); userPopup?.classList.toggle('active'); });
 document.addEventListener('click', () => { userPopup?.classList.remove('active'); modelDropdown?.classList.remove('open'); });
@@ -1517,6 +1544,7 @@ document.querySelector('.recents-header')?.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     const isClickInside = historyPanel?.contains(e.target) || 
                          railChat?.contains(e.target) || 
+                         getEl('open-history-panel-btn')?.contains(e.target) || 
                          ctxMenu?.contains(e.target);
     const isModalOpen = modalOverlay?.classList.contains('active') || 
                         settingsModal?.classList.contains('active');
