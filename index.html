@@ -283,280 +283,261 @@
         <main class="dashboard-content">
             <!-- 🏠 subview-dashboard -->
             <div id="subview-dashboard" class="subview active">
-                <!-- Business-focused metrics grid -->
+                <!-- Top Navigation and Arrow Keys -->
+                <div class="dash-row-header">
+                    <div></div> <!-- spacing -->
+                    <div class="dash-arrows">
+                        <button class="dash-arrow-btn" title="Previous"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+                        <button class="dash-arrow-btn" title="Next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+                    </div>
+                </div>
+
+                <!-- Top Cards Grid -->
                 <div class="dash-grid-top">
-                    <!-- Total Revenue -->
-                    <div class="dash-card">
+                    <!-- Bank Balance -->
+                    <div class="dash-card card-top">
                         <div class="card-top-header">
                             <div class="card-icon-circle accent-bg-1">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="M12 4v16"/><path d="M2 10h20"/></svg>
                             </div>
-                            <span class="mini-card-badge positive">+12.5%</span>
+                            <button class="card-more-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                            </button>
                         </div>
                         <div class="card-value">$143,624</div>
-                        <div class="card-label">Total Revenue</div>
+                        <div class="card-label">Your bank balance</div>
                     </div>
 
-                    <!-- Total Expenses -->
-                    <div class="dash-card">
+                    <!-- Uncategorized transactions -->
+                    <div class="dash-card card-top">
                         <div class="card-top-header">
                             <div class="card-icon-circle accent-bg-2">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                             </div>
-                            <span class="mini-card-badge negative">-3.2%</span>
+                            <button class="card-more-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                            </button>
                         </div>
-                        <div class="card-value">$47,287</div>
-                        <div class="card-label">Total Expenses</div>
+                        <div class="card-value">12</div>
+                        <div class="card-label">Uncategorized transactions</div>
                     </div>
 
-                    <!-- Net Profit -->
-                    <div class="dash-card">
+                    <!-- Employees working today -->
+                    <div class="dash-card card-top">
                         <div class="card-top-header">
                             <div class="card-icon-circle accent-bg-3">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="15" r="2"/></svg>
                             </div>
-                            <span class="mini-card-badge positive">+21.4%</span>
+                            <button class="card-more-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                            </button>
                         </div>
-                        <div class="card-value">$96,337</div>
-                        <div class="card-label">Net Profit</div>
+                        <div class="card-value">7</div>
+                        <div class="card-label">Employees working today</div>
                     </div>
 
-                    <!-- Pending Payments -->
-                    <div class="dash-card">
+                    <!-- This week's card spending -->
+                    <div class="dash-card card-top">
                         <div class="card-top-header">
                             <div class="card-icon-circle accent-bg-4">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                             </div>
-                            <span class="mini-card-badge warning">8 invoices</span>
+                            <button class="card-more-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                            </button>
                         </div>
-                        <div class="card-value">$12,400</div>
-                        <div class="card-label">Pending Payments</div>
-                    </div>
-
-                    <!-- Active Projects -->
-                    <div class="dash-card">
-                        <div class="card-top-header">
-                            <div class="card-icon-circle accent-bg-1">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                            </div>
-                            <span class="mini-card-badge blue">+2 new</span>
-                        </div>
-                        <div class="card-value">14</div>
-                        <div class="card-label">Active Projects</div>
-                    </div>
-
-                    <!-- Active Clients -->
-                    <div class="dash-card">
-                        <div class="card-top-header">
-                            <div class="card-icon-circle accent-bg-3">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            </div>
-                            <span class="mini-card-badge positive">+4 new</span>
-                        </div>
-                        <div class="card-value">54</div>
-                        <div class="card-label">Active Clients</div>
-                    </div>
-
-                    <!-- Monthly Growth -->
-                    <div class="dash-card">
-                        <div class="card-top-header">
-                            <div class="card-icon-circle accent-bg-4">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            </div>
-                            <span class="mini-card-badge positive">+1.2%</span>
-                        </div>
-                        <div class="card-value">+8.5%</div>
-                        <div class="card-label">Monthly Growth</div>
-                    </div>
-
-                    <!-- Cash Flow -->
-                    <div class="dash-card">
-                        <div class="card-top-header">
-                            <div class="card-icon-circle accent-bg-3">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </div>
-                            <span class="mini-card-badge positive">Healthy</span>
-                        </div>
-                        <div class="card-value">+$32,400</div>
-                        <div class="card-label">Cash Flow</div>
+                        <div class="card-value">$3,287.49</div>
+                        <div class="card-label">This week's card spending</div>
                     </div>
                 </div>
 
-                <!-- Interactive SVG Charts and Switches -->
-                <div class="dash-card chart-card" style="margin-top: 20px;">
-                    <div class="chart-card-header">
-                        <div>
-                            <h3 class="chart-title" id="active-chart-title">Revenue Trends</h3>
-                            <div class="chart-subtitle" id="active-chart-subtitle">Monthly breakdown for fiscal year 2026</div>
-                        </div>
-                        <div class="chart-selectors">
-                            <button class="chart-tab-btn active" data-chart="revenue">Revenue</button>
-                            <button class="chart-tab-btn" data-chart="expense">Expense</button>
-                            <button class="chart-tab-btn" data-chart="profit">Profit</button>
-                            <button class="chart-tab-btn" data-chart="growth">Growth</button>
-                        </div>
-                    </div>
-
-                    <!-- Simulated Interactive SVG Chart Body -->
-                    <div class="chart-body-wrap" style="position: relative; margin-top: 15px;">
-                        <!-- Revenue Chart View -->
-                        <div class="chart-container-view active" id="chart-view-revenue">
-                            <div class="chart-grid-line" style="top: 0%"><span>25K</span></div>
-                            <div class="chart-grid-line" style="top: 33%"><span>18K</span></div>
-                            <div class="chart-grid-line" style="top: 66%"><span>12K</span></div>
-                            <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
-                            <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
-                                <defs>
-                                    <linearGradient id="yellow-grad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#facc15" stop-opacity="0.25"/>
-                                        <stop offset="100%" stop-color="#facc15" stop-opacity="0"/>
-                                    </linearGradient>
-                                </defs>
-                                <path d="M 0 160 Q 100 120 200 90 T 400 40 T 600 25" stroke="#facc15" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-                                <path d="M 0 160 Q 100 120 200 90 T 400 40 T 600 25 L 600 200 L 0 200 Z" fill="url(#yellow-grad)"/>
-                                <circle cx="400" cy="40" r="6" fill="#131314" stroke="#facc15" stroke-width="3"/>
-                            </svg>
-                            <div class="chart-tooltip active" style="left: 375px; top: -10px;">
-                                May: $22,450.00
-                            </div>
-                        </div>
-
-                        <!-- Expense Chart View -->
-                        <div class="chart-container-view" id="chart-view-expense">
-                            <div class="chart-grid-line" style="top: 0%"><span>10K</span></div>
-                            <div class="chart-grid-line" style="top: 33%"><span>7K</span></div>
-                            <div class="chart-grid-line" style="top: 66%"><span>4K</span></div>
-                            <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
-                            <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
-                                <defs>
-                                    <linearGradient id="blue-grad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/>
-                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
-                                    </linearGradient>
-                                </defs>
-                                <path d="M 0 120 Q 100 130 200 110 T 400 130 T 600 100" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-                                <path d="M 0 120 Q 100 130 200 110 T 400 130 T 600 100 L 600 200 L 0 200 Z" fill="url(#blue-grad)"/>
-                                <circle cx="400" cy="130" r="6" fill="#131314" stroke="#3b82f6" stroke-width="3"/>
-                            </svg>
-                            <div class="chart-tooltip active" style="left: 375px; top: 80px;">
-                                May: $6,280.00
-                            </div>
-                        </div>
-
-                        <!-- Profit Chart View -->
-                        <div class="chart-container-view" id="chart-view-profit">
-                            <div class="chart-grid-line" style="top: 0%"><span>20K</span></div>
-                            <div class="chart-grid-line" style="top: 33%"><span>14K</span></div>
-                            <div class="chart-grid-line" style="top: 66%"><span>8K</span></div>
-                            <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
-                            <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
-                                <defs>
-                                    <linearGradient id="green-grad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
-                                        <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
-                                    </linearGradient>
-                                </defs>
-                                <path d="M 0 180 Q 100 150 200 120 T 400 80 T 600 50" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-                                <path d="M 0 180 Q 100 150 200 120 T 400 80 T 600 50 L 600 200 L 0 200 Z" fill="url(#green-grad)"/>
-                                <circle cx="400" cy="80" r="6" fill="#131314" stroke="#10b981" stroke-width="3"/>
-                            </svg>
-                            <div class="chart-tooltip active" style="left: 375px; top: 30px;">
-                                May: $16,170.00
-                            </div>
-                        </div>
-
-                        <!-- Growth Chart View -->
-                        <div class="chart-container-view" id="chart-view-growth">
-                            <div class="chart-grid-line" style="top: 0%"><span>12%</span></div>
-                            <div class="chart-grid-line" style="top: 33%"><span>8%</span></div>
-                            <div class="chart-grid-line" style="top: 66%"><span>4%</span></div>
-                            <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
-                            <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
-                                <defs>
-                                    <linearGradient id="purple-grad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.4"/>
-                                        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05"/>
-                                    </linearGradient>
-                                </defs>
-                                <!-- Render beautiful custom bars -->
-                                <rect x="50" y="100" width="40" height="100" rx="4" fill="url(#purple-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
-                                <rect x="150" y="80" width="40" height="120" rx="4" fill="url(#purple-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
-                                <rect x="250" y="60" width="40" height="140" rx="4" fill="url(#purple-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
-                                <rect x="350" y="50" width="40" height="150" rx="4" fill="url(#purple-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
-                                <rect x="450" y="30" width="40" height="170" rx="4" fill="url(#purple-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
-                            </svg>
-                            <div class="chart-tooltip active" style="left: 350px; top: 0px;">
-                                May Growth: +8.5%
-                            </div>
-                        </div>
-
-                        <!-- X Axis Labels -->
-                        <div class="chart-x-axis" style="margin-top: 10px;">
-                            <span>Jan</span>
-                            <span>Feb</span>
-                            <span>Mar</span>
-                            <span>Apr</span>
-                            <span>May</span>
-                            <span>Jun</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Activities Summary Panel -->
-                <div class="dash-two-columns" style="margin-top: 20px;">
-                    <!-- Latest Client Actions -->
-                    <div class="dash-card email-card">
-                        <h3 class="card-section-title">Latest System Transactions</h3>
-                        <div class="email-list">
-                            <div class="email-row-item">
-                                <div class="email-avatar-circle hm-gradient">RP</div>
-                                <div class="email-details">
-                                    <div class="email-sender">Rudra Pratap Singh</div>
-                                    <div class="email-subject">System initialization completed</div>
+                <!-- Two Columns Main Layout -->
+                <div class="dash-two-columns">
+                    <!-- LEFT COLUMN -->
+                    <div class="dash-col-left">
+                        <!-- Overdues & Clients Grid -->
+                        <div class="overdue-clients-grid">
+                            <!-- New clients -->
+                            <div class="dash-card mini-stats-card">
+                                <div class="mini-card-title">New clients</div>
+                                <div class="mini-card-value-wrap">
+                                    <div class="mini-card-val">54</div>
+                                    <div class="mini-card-badge positive">+ 18.7%</div>
                                 </div>
-                                <div class="email-time">Just Now</div>
                             </div>
-                            <div class="email-row-item">
-                                <div class="email-avatar-circle mc-gradient">JD</div>
-                                <div class="email-details">
-                                    <div class="email-sender">John Doe</div>
-                                    <div class="email-subject">Contract draft approved for Acme Corp</div>
+                            <!-- Invoices overdue -->
+                            <div class="dash-card mini-stats-card">
+                                <div class="mini-card-title">Invoices overdue</div>
+                                <div class="mini-card-value-wrap">
+                                    <div class="mini-card-val">6</div>
+                                    <div class="mini-card-badge negative">+ 2.7%</div>
                                 </div>
-                                <div class="email-time">2 hours ago</div>
                             </div>
-                            <div class="email-row-item">
-                                <div class="email-avatar-circle bw-gradient">AS</div>
-                                <div class="email-details">
-                                    <div class="email-sender">Alice Smith</div>
-                                    <div class="email-subject">Invoice MZ-1024 generated and sent</div>
+                        </div>
+
+                        <!-- Revenue Chart Card -->
+                        <div class="dash-card chart-card">
+                            <div class="chart-card-header">
+                                <div>
+                                    <h3 class="chart-title">Revenue</h3>
+                                    <div class="chart-subtitle">Last 7 days VS prior week</div>
                                 </div>
-                                <div class="email-time">Yesterday</div>
+                            </div>
+                            <!-- Simulated SVG Line Chart with Tooltips -->
+                            <div class="chart-body-wrap">
+                                <div class="chart-svg-container">
+                                    <!-- Grid Lines -->
+                                    <div class="chart-grid-line" style="top: 0%"><span>20K</span></div>
+                                    <div class="chart-grid-line" style="top: 33%"><span>15K</span></div>
+                                    <div class="chart-grid-line" style="top: 66%"><span>10K</span></div>
+                                    <div class="chart-grid-line" style="top: 100%"><span>0</span></div>
+                                    
+                                    <svg class="chart-svg" viewBox="0 0 600 200" fill="none">
+                                        <!-- Prior Week Path (Light Blue) -->
+                                        <path d="M 0 140 Q 100 130 200 90 T 400 60 T 600 80" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                        <!-- Current Week Path (Black) -->
+                                        <path d="M 0 100 Q 100 120 200 110 T 400 50 T 600 85" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                        <!-- Interactive Markers -->
+                                        <circle cx="200" cy="110" r="5" fill="#fff" stroke="#0f172a" stroke-width="3"/>
+                                        <circle cx="200" cy="90" r="5" fill="#fff" stroke="#93c5fd" stroke-width="3"/>
+                                    </svg>
+
+                                    <!-- High-fidelity Tooltips -->
+                                    <div class="chart-tooltip active" style="left: 170px; top: 15px;">
+                                        <span class="tooltip-dot blue-dot"></span> Feb 15: $16,259.78
+                                    </div>
+                                    <div class="chart-tooltip active" style="left: 170px; top: 62px;">
+                                        <span class="tooltip-dot black-dot"></span> Feb 8: $12,790.34
+                                    </div>
+                                </div>
+                                <!-- X Axis Labels -->
+                                <div class="chart-x-axis">
+                                    <span>Feb 14</span>
+                                    <span>Feb 15</span>
+                                    <span>Feb 16</span>
+                                    <span>Feb 17</span>
+                                    <span>Feb 18</span>
+                                    <span>Feb 19</span>
+                                    <span>Feb 20</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Emails Card -->
+                        <div class="dash-card email-card">
+                            <h3 class="card-section-title">Recent emails</h3>
+                            <div class="email-list">
+                                <!-- Hannah Morgan -->
+                                <div class="email-row-item">
+                                    <div class="email-avatar-circle hm-gradient">HM</div>
+                                    <div class="email-details">
+                                        <div class="email-sender">Hannah Morgan</div>
+                                        <div class="email-subject">Meeting scheduled</div>
+                                    </div>
+                                    <div class="email-time">1:24 PM</div>
+                                </div>
+                                <!-- Megan Clark -->
+                                <div class="email-row-item">
+                                    <div class="email-avatar-circle mc-gradient">MC</div>
+                                    <div class="email-details">
+                                        <div class="email-sender">Megan Clark</div>
+                                        <div class="email-subject">Update on marketing campaign</div>
+                                    </div>
+                                    <div class="email-time">12:32 PM</div>
+                                </div>
+                                <!-- Brandon Williams -->
+                                <div class="email-row-item">
+                                    <div class="email-avatar-circle bw-gradient">BW</div>
+                                    <div class="email-details">
+                                        <div class="email-sender">Brandon Williams</div>
+                                        <div class="email-subject">Design 2.0 is about to launch</div>
+                                    </div>
+                                    <div class="email-time">Yesterday at 8:57 PM</div>
+                                </div>
+                                <!-- Reid Smith -->
+                                <div class="email-row-item">
+                                    <div class="email-avatar-circle rs-gradient">RS</div>
+                                    <div class="email-details">
+                                        <div class="email-sender">Reid Smith</div>
+                                        <div class="email-subject">My friend Julie loves Dappr!</div>
+                                    </div>
+                                    <div class="email-time">Yesterday at 8:49 PM</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Key Timeline Tasks -->
-                    <div class="dash-card todo-card">
-                        <h3 class="card-section-title">High Priority Business Actions</h3>
-                        <div class="todo-list">
-                            <div class="todo-item-row">
-                                <div class="todo-icon-circle black-circle-bg">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <!-- RIGHT COLUMN -->
+                    <div class="dash-col-right">
+                        <!-- Formation status -->
+                        <div class="dash-card dark-card formation-card">
+                            <div class="dark-card-title-wrap">
+                                <h3 class="dark-card-title">Formation status</h3>
+                                <span class="dark-card-status">In progress</span>
+                            </div>
+                            <!-- Custom high-fidelity progress bar -->
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 60%"></div>
+                            </div>
+                            <div class="progress-estimate">Estimated processing <strong>4-5 business days</strong></div>
+                            <button class="dark-card-action-btn">View status</button>
+                        </div>
+
+                        <!-- Your to-Do list -->
+                        <div class="dash-card todo-card">
+                            <h3 class="card-section-title">Your to-Do list</h3>
+                            <div class="todo-list">
+                                <!-- Item 1 -->
+                                <div class="todo-item-row">
+                                    <div class="todo-icon-circle black-circle-bg">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                    </div>
+                                    <div class="todo-item-details">
+                                        <div class="todo-item-name">Run payroll</div>
+                                        <div class="todo-item-due">Mar 4 at 6:00 pm</div>
+                                    </div>
                                 </div>
-                                <div class="todo-item-details">
-                                    <div class="todo-item-name">Review monthly cash flow report</div>
-                                    <div class="todo-item-due">June 4 at 6:00 pm</div>
+                                <!-- Item 2 -->
+                                <div class="todo-item-row">
+                                    <div class="todo-icon-circle black-circle-bg">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    </div>
+                                    <div class="todo-item-details">
+                                        <div class="todo-item-name">Review time off request</div>
+                                        <div class="todo-item-due">Mar 7 at 6:00 pm</div>
+                                    </div>
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="todo-item-row">
+                                    <div class="todo-icon-circle black-circle-bg">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    </div>
+                                    <div class="todo-item-details">
+                                        <div class="todo-item-name">Sign board resolution</div>
+                                        <div class="todo-item-due">Mar 12 at 6:00 pm</div>
+                                    </div>
+                                </div>
+                                <!-- Item 4 -->
+                                <div class="todo-item-row">
+                                    <div class="todo-icon-circle black-circle-bg">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div class="todo-item-details">
+                                        <div class="todo-item-name">Finish onboarding Tony</div>
+                                        <div class="todo-item-due">Mar 12 at 6:00 pm</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="todo-item-row">
-                                <div class="todo-icon-circle black-circle-bg">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </div>
-                                <div class="todo-item-details">
-                                    <div class="todo-item-name">Generate Q2 legal contracts</div>
-                                    <div class="todo-item-due">June 12 at 4:30 pm</div>
-                                </div>
+                        </div>
+
+                        <!-- Board meeting -->
+                        <div class="dash-card dark-card meeting-card">
+                            <div class="meeting-dot-header">
+                                <span class="green-indicator-dot"></span>
+                                <span class="meeting-date-text">Feb 22 at 6:00 PM</span>
                             </div>
+                            <h3 class="dark-card-title meeting-title">Board meeting</h3>
+                            <div class="meeting-description">You have been invited to attend a meeting of the Board Directors.</div>
                         </div>
                     </div>
                 </div>
