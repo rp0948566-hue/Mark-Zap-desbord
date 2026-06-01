@@ -441,7 +441,6 @@ function copyToClipboard(text, btn) {
 }
 
 const markZapView = getEl('markzap-view');
-const navCode = getEl('nav-code');
 
 function switchToHome() {
     activeView = 'home';
@@ -465,11 +464,144 @@ function switchToChat() {
     }
 }
 
-function switchToMarkZap() {
-    activeView = 'markzap';
+function switchToSubView(subviewId) {
+    activeView = subviewId;
     homeView?.classList.remove('active');
     chatView?.classList.remove('active');
     markZapView?.classList.add('active');
+    
+    // Hide all subviews
+    document.querySelectorAll('.subview').forEach(sv => sv.classList.remove('active'));
+    // Show active one
+    const target = getEl(subviewId);
+    if (target) target.classList.add('active');
+    
+    // Update the dynamic page title in the dashboard header
+    const welcomeTitle = document.querySelector('.dash-welcome');
+    if (welcomeTitle) {
+        const titles = {
+            'subview-dashboard': 'Good morning, Rudra!',
+            'subview-clients': 'Clients CRM',
+            'subview-projects': 'Projects Workspace',
+            'subview-finance': 'Financial Ledger',
+            'subview-analytics': 'Analytics Trends',
+            'subview-reports': 'Reports Center',
+            'subview-tasks': 'Tasks Management',
+            'subview-messages': 'Team & Clients Chat',
+            'subview-invoices': 'Invoice Generator',
+            'subview-settings': 'Settings Dashboard'
+        };
+        welcomeTitle.textContent = titles[subviewId] || 'Mark Zap Business OS';
+    }
+}
+
+// ─── Phase 1: Navigation Routing ──────────────────────────────────────────
+const sidebarMapping = {
+    'nav-dashboard': 'subview-dashboard',
+    'nav-clients': 'subview-clients',
+    'nav-projects': 'subview-projects',
+    'nav-finance': 'subview-finance',
+    'nav-analytics': 'subview-analytics',
+    'nav-reports': 'subview-reports',
+    'nav-tasks': 'subview-tasks',
+    'nav-messages': 'subview-messages',
+    'nav-invoices': 'subview-invoices',
+    'nav-settings': 'subview-settings'
+};
+
+Object.entries(sidebarMapping).forEach(([navId, subviewId]) => {
+    getEl(navId)?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.rail-item').forEach(item => item.classList.remove('active'));
+        getEl(navId)?.classList.add('active');
+        historyPanel?.classList.remove('active');
+        mainLayout?.classList.remove('history-open');
+        switchToSubView(subviewId);
+        if (window.innerWidth <= 768) {
+            closeSidebar();
+        }
+    });
+});
+
+getEl('nav-markzap-ai')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.querySelectorAll('.rail-item').forEach(item => item.classList.remove('active'));
+    getEl('nav-markzap-ai')?.classList.add('active');
+    historyPanel?.classList.remove('active');
+    mainLayout?.classList.remove('history-open');
+    if (activeView === 'chat') {
+        switchToChat();
+    } else {
+        switchToHome();
+    }
+    if (window.innerWidth <= 768) {
+        closeSidebar();
+    }
+});
+
+// ─── Phase 1: Chart Tab Switching ─────────────────────────────────────────
+document.querySelectorAll('.chart-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.chart-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const chartType = btn.dataset.chart;
+        
+        // Hide all charts
+        document.querySelectorAll('.chart-container-view').forEach(cv => cv.classList.remove('active'));
+        // Show target chart
+        const targetChart = getEl(`chart-view-${chartType}`);
+        if (targetChart) targetChart.classList.add('active');
+        
+        // Update title/subtitle
+        const titleEl = getEl('active-chart-title');
+        const subtitleEl = getEl('active-chart-subtitle');
+        if (titleEl && subtitleEl) {
+            const chartDetails = {
+                revenue: { title: 'Revenue Trends', subtitle: 'Monthly breakdown for fiscal year 2026' },
+                expense: { title: 'Expense Patterns', subtitle: 'Hosting, domain, API, and cloud services costs' },
+                profit: { title: 'Net Profit Curve', subtitle: 'Calculated margins (Revenue - Operational Expenses)' },
+                growth: { title: 'Monthly Growth Chart', subtitle: 'Month-over-month business scale statistics' }
+            };
+            const details = chartDetails[chartType];
+            if (details) {
+                titleEl.textContent = details.title;
+                subtitleEl.textContent = details.subtitle;
+            }
+        }
+    });
+});
+
+// ─── Phase 1: Mark Zap AI Action Chips ─────────────────────────────────────
+document.querySelectorAll('.ai-action-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+        const type = chip.dataset.chip;
+        const prompt = getChipPrompt(type);
+        if (homeTA) {
+            homeTA.value = prompt;
+            homeTA.dispatchEvent(new Event('input', { bubbles: true }));
+            if (homeSendBtn) {
+                homeSendBtn.disabled = false;
+                homeSendBtn.classList.add('active');
+                homeSendBtn.click();
+            }
+        }
+    });
+});
+
+function getChipPrompt(type) {
+    const prompts = {
+        business: "💼 Perform a strategic administrative sweep. Summarize key tasks, identify operational blocks, and draft a recommended schedule for this week.",
+        project: "📁 Project Assistant: Analyze project margins, milestones, and active resource allocations. Prepare a breakdown of cost-to-profit ratios across our 14 active projects.",
+        proposal: "📄 Proposal Generator: Generate a premium business proposal draft for a new corporate client. Include scope of work, timeline milestones, pricing models, and payment terms.",
+        invoice: "🧾 Invoice Generator: Generate a professional invoice summary for Acme Corp. Detail itemized line-items for development services, apply a 15% corporate discount, and calculate regional taxations.",
+        contract: "✒️ Contract Generator: Draft a solid client service-level agreement (SLA) contract. Include intellectual property clauses, confidentiality terms, and dispute resolution guidelines.",
+        reply: "💬 Client Reply Generator: Craft a highly professional, high-priority reply to a client query about project delays. Maintain a premium, assuring, and solution-oriented tone.",
+        marketing: "📣 Marketing Assistant: Design a comprehensive go-to-market strategy for a SaaS product launch. Include target audience segmentation, channel distributions, and copywriting drafts.",
+        content: "📝 Content Generator: Generate a deep company report explaining the efficiency gains of transitioning to an AI-first operational architecture.",
+        insights: "💡 Business Insights: Perform a financial diagnostics run. Analyze domain renewals, computing expenses, SaaS subscriptions, and calculate net operational ROI."
+    };
+    return prompts[type] || '';
 }
 
 // ─── Interaction Logic ──────────────────────────────────────────────────────
@@ -494,18 +626,6 @@ const closeSidebar = () => { sidebar?.classList.add('collapsed'); mainLayout?.cl
 overlay?.addEventListener('click', closeSidebar);
 
 getEl('sidebar-new-chat-btn-home')?.addEventListener('click', startNewChat);
-
-navCode?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    document.querySelectorAll('.rail-item').forEach(item => item.classList.remove('active'));
-    navCode?.classList.add('active');
-    historyPanel?.classList.remove('active');
-    mainLayout?.classList.remove('history-open');
-    switchToMarkZap();
-    if (window.innerWidth <= 768) {
-        closeSidebar();
-    }
-});
 
 ['upgrade-btn-sidebar', 'home-upgrade-btn'].forEach(id => {
     getEl(id)?.addEventListener('click', (e) => {
