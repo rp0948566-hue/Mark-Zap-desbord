@@ -1728,3 +1728,229 @@ input:checked + .slider:before { transform: translateX(20px); }
     background: rgba(239, 68, 68, 0.1);
     color: #ef4444;
 }
+
+/* ── PHONE FRIENDLY & MOBILE RESPONSIVE OVERRIDES ── */
+@media (max-width: 768px) {
+    /* 1. Sidebar overlay & floating behavior */
+    .main-layout {
+        margin-left: 0 !important;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 10000;
+        background: #0c0c0e !important;
+        border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    /* When not collapsed, slide in */
+    .sidebar:not(.collapsed) {
+        transform: translateX(0) !important;
+    }
+    
+    /* Elegant overlay triggered by :has selector when sidebar is not collapsed */
+    body:has(.sidebar:not(.collapsed)) .sidebar-overlay {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+    
+    /* Toggle Button adjustment */
+    .global-main-toggle {
+        left: 12px !important;
+        top: 12px !important;
+    }
+    
+    body.history-panel-open .global-main-toggle {
+        left: 12px !important;
+    }
+    
+    /* 2. Home View Mobile Optimizations */
+    #home-view {
+        padding: 60px 16px 20px !important;
+    }
+    
+    .home-main {
+        padding: 0 8px 40px !important;
+        gap: 20px !important;
+    }
+    
+    .hero-biohazard-img {
+        max-width: 260px !important;
+    }
+    
+    .kimi-claw-card {
+        padding: 10px 14px !important;
+        gap: 10px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        border-radius: 12px !important;
+    }
+    
+    .claw-icon {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 20px !important;
+        border-radius: 8px !important;
+    }
+    
+    .claw-title {
+        font-size: 13.5px !important;
+    }
+    
+    .claw-sub {
+        font-size: 11.5px !important;
+    }
+    
+    /* 3. Typing Bar / Input Box Mobile Friendly */
+    .chat-input-area {
+        padding: 8px 12px 12px !important;
+    }
+    
+    .input-box {
+        padding: 10px 12px 8px !important;
+        border-radius: 14px !important;
+    }
+    
+    textarea {
+        font-size: 15px !important;
+        min-height: 36px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .input-toolbar {
+        margin-top: 8px !important;
+    }
+    
+    .plus-btn, .send-btn {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    
+    .agent-btn, .model-btn {
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+    }
+    
+    /* 4. Chat View & Messages Mobile Friendly */
+    .messages-area {
+        padding: 16px 0 4px !important;
+    }
+    
+    .message-row {
+        padding: 6px 12px !important;
+        gap: 8px !important;
+    }
+    
+    .user-bubble {
+        max-width: 85% !important;
+        font-size: 14.5px !important;
+        padding: 10px 14px !important;
+        border-radius: 16px 16px 4px 16px !important;
+    }
+    
+    .ai-avatar {
+        width: 30px !important;
+        height: 30px !important;
+        margin-top: 2px !important;
+    }
+    
+    .ai-content {
+        font-size: 14px !important;
+    }
+    
+    .ai-text p, .ai-text li {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    .ai-text pre {
+        padding: 12px 14px !important;
+        margin: 12px 0 !important;
+        border-radius: 8px !important;
+    }
+    
+    .ai-text pre code {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* 5. Bottom Drawer Style Chat History on Mobile */
+    .history-panel {
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 60vh !important;
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
+        transform: translate(0, 110%) scale(1) !important;
+        clip-path: none !important;
+    }
+    
+    .history-panel.active {
+        left: 0 !important;
+        transform: translate(0, 0) scale(1) !important;
+        clip-path: none !important;
+    }
+    
+    /* 6. Settings Modal Mobile Friendly */
+    .settings-modal {
+        flex-direction: column !important;
+        height: 90vh !important;
+        width: 95vw !important;
+        max-width: 100% !important;
+        border-radius: 16px !important;
+    }
+    
+    .settings-sidebar {
+        width: 100% !important;
+        height: auto !important;
+        padding: 48px 16px 12px !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        gap: 8px !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+        scrollbar-width: none !important;
+    }
+    
+    .settings-sidebar::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    .settings-nav-item {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+    }
+    
+    .settings-content {
+        padding: 20px 16px !important;
+    }
+    
+    .account-preview {
+        padding: 12px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+    
+    .preview-badge {
+        position: static !important;
+        margin-top: 4px !important;
+    }
+    
+    .link-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 12px !important;
+    }
+    
+    .link-action, .link-btn-pill {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
+
